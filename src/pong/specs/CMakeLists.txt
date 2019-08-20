@@ -20,6 +20,6 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
     POST_BUILD
     COMMAND
 	  ${CMAKE_COMMAND} -E copy_if_different
-  	  $<TARGET_FILE_DIR:pong>/pong.dll
+      $<TARGET_FILE:pong>
       $<TARGET_FILE_DIR:pong_spec_tests>)
 endif()

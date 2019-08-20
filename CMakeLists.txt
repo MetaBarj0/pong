@@ -13,3 +13,5 @@ add_subdirectory(src)
 enable_testing()
 
 include(GNUInstallDirs)
+
+include (CPack)
