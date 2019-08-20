@@ -2,8 +2,7 @@ cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
 	add_executable(game
-	  WIN32
-	  main.cpp)
+	  WIN32)
 
   add_custom_command(
     TARGET
@@ -15,9 +14,12 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
   	  $<TARGET_FILE_DIR:game>)
 
 else()
-	add_executable(game
-	  main.cpp)
+	add_executable(game)
 endif()
+
+target_sources(game
+  PRIVATE
+  main.cpp)
 
 set_target_properties(game
   PROPERTIES
@@ -38,3 +40,13 @@ target_link_libraries(game
 add_subdirectory(pong)
 
 enable_testing()
+
+install(TARGETS
+  game
+  RUNTIME
+    DESTINATION ${INSTALL_BINDIR}
+    COMPONENT bin)
+
+install(FILES
+  "${SDL2_LIB_DIR}/SDL2.dll"
+  TYPE BIN)

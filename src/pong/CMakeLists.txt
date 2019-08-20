@@ -10,6 +10,11 @@ set_target_properties(pong
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 	CXX_VISIBILITY_PRESET HIDDEN
+	POSITION_INDEPENDENT_CODE 1
+	SOVERSION ${PROJECT_VERSION_MAJOR}
+	OUTPUT_NAME "pong"
+	DEBUG_POSTFIX "_d"
+	PUBLIC_HEADER ""
 )
 
 include(GenerateExportHeader)
@@ -34,3 +39,18 @@ add_test(
 
 add_subdirectory(specs)
 add_subdirectory(tests)
+
+install(TARGETS
+  pong
+  ARCHIVE
+    DESTINATION ${INSTALL_LIBDIR}
+    COMPONENT lib
+  RUNTIME
+    DESTINATION ${INSTALL_BINDIR}
+    COMPONENT bin
+  LIBRARY
+    DESTINATION ${INSTALL_LIBDIR}
+    COMPONENT lib
+  PUBLIC_HEADER
+    DESTINATION ${INSTALL_INCLUDEDIR}/pong
+    COMPONENT dev)
