@@ -2,13 +2,22 @@
 
 #include "catch.hpp"
 
-SCENARIO( "A scenario", "" )
+#include "game.hpp"
+
+SCENARIO( "The player starts a new game", "" )
 {
-	GIVEN( "A piece of context" )
+	GIVEN( "The player creates a new game" )
 	{
-		THEN( "Something good happens" )
+		game the_game;
+
+		WHEN( "The new game is started" )
 		{
-			REQUIRE( true == true );
+			the_game.start();
+
+			THEN( "The game is running" )
+			{
+				REQUIRE( the_game.is_running() == true );
+			}
 		}
 	}
 }

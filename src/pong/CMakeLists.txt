@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
 add_library(pong
   SHARED
-  src/pong.cpp)
+  src/game.cpp)
 
 
 set_target_properties(pong
@@ -12,9 +12,8 @@ set_target_properties(pong
 	CXX_VISIBILITY_PRESET HIDDEN
 	POSITION_INDEPENDENT_CODE 1
 	SOVERSION ${PROJECT_VERSION_MAJOR}
-	OUTPUT_NAME "pong"
+	OUTPUT_NAME "libpong"
 	DEBUG_POSTFIX "_d"
-	PUBLIC_HEADER ""
 )
 
 include(GenerateExportHeader)
@@ -22,7 +21,7 @@ generate_export_header(pong)
 
 target_include_directories(pong
   PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}
+    src
     $<TARGET_FILE_DIR:pong>)
 
 enable_testing()
