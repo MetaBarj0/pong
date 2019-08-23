@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
 add_library(pong
   SHARED
-  src/game.cpp)
+  src/game.cpp
+  src/playground.cpp
+  src/wall.cpp
+  src/paddle.cpp)
 
 
 set_target_properties(pong
