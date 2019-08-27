@@ -1,8 +1,8 @@
 #include "paddle.hpp"
 
-paddle_position paddle::get_position() const noexcept
+paddle_location paddle::get_location() const noexcept
 {
-	return paddle_position::left;
+	return paddle_location::left;
 }
 
 paddle_orientation paddle::get_orientation() const noexcept
@@ -18,4 +18,9 @@ unsigned char paddle::width() const noexcept
 unsigned char paddle::height() const noexcept
 {
 	return 10u;
+}
+
+position paddle::get_center() const noexcept
+{
+	return {};
 }

@@ -88,7 +88,7 @@ SCENARIO( "The playground has walls and is correctly sized" )
 				THEN( "The playground has all its walls (top, right and bottom)" )
 				{
 					for( auto position : positions )
-						REQUIRE( playground.get_wall_by_position( position ).get_position() == position );
+						REQUIRE( playground.get_wall_by_position( position ).get_location() == position );
 				}
 
 				THEN( "Each and every walls are 10 units thick" )
@@ -121,7 +121,7 @@ SCENARIO( "A paddle is in the playground when the game is started" )
 				{
 					THEN( "The paddle is located at the left side of the playground" )
 					{
-						REQUIRE( paddle.get_position() == paddle_position::left );
+						REQUIRE( paddle.get_location() == paddle_location::left );
 					}
 
 					AND_THEN( "The paddle vertically oriented" )
@@ -133,6 +133,11 @@ SCENARIO( "A paddle is in the playground when the game is started" )
 					{
 						REQUIRE( paddle.width() == 50 );
 						REQUIRE( paddle.height() == 10 );
+					}
+
+					AND_THEN( "The paddle position is midway of the playground" )
+					{
+						paddle.get_center().y == playground.get_center().y;
 					}
 				}
 			}

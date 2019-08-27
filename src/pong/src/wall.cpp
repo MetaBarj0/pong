@@ -4,7 +4,7 @@ wall::wall( wall_position position ) noexcept : position{ position }
 {
 }
 
-wall_position wall::get_position() const noexcept
+wall_position wall::get_location() const noexcept
 {
 	return position;
 }

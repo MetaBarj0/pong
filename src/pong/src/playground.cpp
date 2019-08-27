@@ -19,3 +19,8 @@ paddle playground::get_paddle() const noexcept
 {
 	return {};
 }
+
+position playground::get_center() const noexcept
+{
+	return {};
+}

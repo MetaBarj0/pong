@@ -1,3 +1,6 @@
+#ifndef _GAME_HPP_
+#define _GAME_HPP_
+
 #include "pong_export.h"
 
 #include "playground.hpp"
@@ -14,3 +17,5 @@ private :
 	bool running = false;
 	playground playground;
 };
+
+#endif // !_GAME_HPP_
