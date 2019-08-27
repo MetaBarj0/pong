@@ -137,11 +137,35 @@ SCENARIO( "A paddle is in the playground when the game is started" )
 
 					AND_THEN( "The paddle position is midway of the playground" )
 					{
-						paddle.get_center().y == playground.get_center().y;
+						REQUIRE( paddle.get_center().y() == playground.get_center().y() );
 					}
 				}
 			}
 		}
 
+	}
+}
+
+SCENARIO( "A ball is in the playground when the game is started" )
+{
+	GIVEN( "A started game" )
+	{
+		game the_game;
+		the_game.start();
+
+		AND_GIVEN( "There is a playground" )
+		{
+			const auto &playground = the_game.get_playground();
+
+			THEN( "There is one ball in the playground" )
+			{
+				const auto &ball = playground.get_ball();
+
+				AND_THEN( "The ball is at the center of the playground" )
+				{
+					REQUIRE( ball.get_center() == playground.get_center() );
+				}
+			}
+		}
 	}
 }

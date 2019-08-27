@@ -24,3 +24,8 @@ position playground::get_center() const noexcept
 {
 	return {};
 }
+
+ball playground::get_ball() const noexcept
+{
+	return {};
+}

@@ -5,7 +5,9 @@ add_library(pong
   src/game.cpp
   src/playground.cpp
   src/wall.cpp
-  src/paddle.cpp)
+  src/paddle.cpp
+  src/position.cpp
+  src/ball.cpp)
 
 
 set_target_properties(pong
