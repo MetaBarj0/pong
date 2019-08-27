@@ -34,4 +34,28 @@ SCENARIO( "A ball is in the playground when the game is started" )
 	}
 }
 
+SCENARIO( "A ball has a velocity" )
+{
+	GIVEN( "A ball in a game" )
+	{
+		game the_game;
+		const auto &ball = the_game.get_playground().get_ball();
+
+		THEN( "The ball has a velocity" )
+		{
+			const auto &velocity = ball.get_velocity();
+
+			AND_THEN( "The velocity of the ball has a fixed speed of 125 units per second" )
+			{
+				REQUIRE( velocity.speed == 125 );
+			}
+
+			AND_THEN( "The direction of the velocity of the ball is right" )
+			{
+				REQUIRE( velocity.direction == direction::right );
+			}
+		}
+	}
+}
+
 #endif // !_BALL_SCENARIO_HPP__

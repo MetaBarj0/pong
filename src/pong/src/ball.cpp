@@ -9,3 +9,8 @@ unsigned char ball::size() const noexcept
 {
 	return 10u;
 }
+
+velocity ball::get_velocity() const noexcept
+{
+	return {};
+}
