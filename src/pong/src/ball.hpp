@@ -8,6 +8,7 @@ class PONG_EXPORT ball
 {
 public :
 	position get_center() const noexcept;
+	unsigned char size() const noexcept;
 };
 
 #endif // !_BALL_HPP_

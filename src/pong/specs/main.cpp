@@ -165,6 +165,11 @@ SCENARIO( "A ball is in the playground when the game is started" )
 				{
 					REQUIRE( ball.get_center() == playground.get_center() );
 				}
+
+				AND_THEN( "The ball has a size of 10 units" )
+				{
+					REQUIRE( ball.size() == 10 );
+				}
 			}
 		}
 	}
