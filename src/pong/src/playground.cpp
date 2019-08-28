@@ -12,7 +12,7 @@ unsigned short playground::height() const noexcept
 
 wall playground::get_wall_by_position( wall_position position ) const noexcept
 {
-	return { position };
+	return wall{ position };
 }
 
 paddle playground::get_paddle() const noexcept
