@@ -7,13 +7,13 @@
 
 class PONG_EXPORT game
 {
-public :
+public:
 	void start() noexcept;
 	bool is_running() const noexcept;
 	void stop() noexcept;
 	const playground &get_playground() const noexcept;
 
-private :
+private:
 	bool running = false;
 	const playground playground;
 };

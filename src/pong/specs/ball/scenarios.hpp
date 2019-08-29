@@ -47,12 +47,12 @@ SCENARIO( "A ball has a velocity" )
 
 			AND_THEN( "The velocity of the ball has a fixed speed of 125 units per second" )
 			{
-				REQUIRE( velocity.speed == 125 );
+				REQUIRE( velocity.get_speed() == 125 );
 			}
 
 			AND_THEN( "The direction of the velocity of the ball is right" )
 			{
-				REQUIRE( velocity.direction == direction::right );
+				REQUIRE( velocity.get_direction() == directions::right );
 			}
 		}
 	}

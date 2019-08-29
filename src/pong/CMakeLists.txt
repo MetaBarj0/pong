@@ -7,6 +7,7 @@ add_library(pong
   src/wall.cpp
   src/paddle.cpp
   src/position.cpp
+  src/velocity.cpp
   src/ball.cpp)
 
 

@@ -3,6 +3,7 @@
 
 #include "pong_export.h"
 #include "position.hpp"
+#include "velocity.hpp"
 
 enum class paddle_location
 {
@@ -22,6 +23,7 @@ public:
 	unsigned char width() const noexcept;
 	unsigned char height() const noexcept;
 	position get_center() const noexcept;
+	velocity get_velocity() const noexcept;
 };
 
 #endif // !_PADDLE_HPP_

@@ -12,5 +12,5 @@ unsigned char ball::size() const noexcept
 
 velocity ball::get_velocity() const noexcept
 {
-	return {};
+	return { 125, directions::right };
 }

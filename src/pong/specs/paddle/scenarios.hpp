@@ -49,4 +49,22 @@ SCENARIO( "A paddle is in the playground when the game is started" )
 	}
 }
 
+SCENARIO( "The paddle has a velocity" )
+{
+	GIVEN( "A started game" )
+	{
+		game the_game;
+		the_game.start();
+		const auto &playground = the_game.get_playground();
+
+		THEN( "The paddle in the playground is standing still" )
+		{
+			const auto &paddle_velocity = playground.get_paddle().get_velocity();
+
+			REQUIRE( paddle_velocity.get_speed() == 0 );
+			REQUIRE( paddle_velocity.get_direction() == directions::none );
+		}
+	}
+}
+
 #endif // !_PADDLE_SCENARIO_HPP__

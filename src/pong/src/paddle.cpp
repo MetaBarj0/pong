@@ -24,3 +24,8 @@ position paddle::get_center() const noexcept
 {
 	return {};
 }
+
+velocity paddle::get_velocity() const noexcept
+{
+	return { 0, directions::none };
+}
