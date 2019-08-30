@@ -11,11 +11,14 @@ public:
 	void start() noexcept;
 	bool is_running() const noexcept;
 	void stop() noexcept;
-	const playground &get_playground() const noexcept;
+	playground &get_playground() noexcept;
+	void update( double delta ) noexcept;
+	bool is_updated() noexcept;
 
 private:
-	bool running = false;
-	const playground playground = {};
+	bool running_ = false;
+	bool updated_ = false;
+	playground playground_;
 };
 
 #endif // !_GAME_HPP_

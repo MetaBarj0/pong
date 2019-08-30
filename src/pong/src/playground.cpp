@@ -29,3 +29,20 @@ ball playground::get_ball() const noexcept
 {
 	return {};
 }
+
+void playground::update( double delta ) noexcept
+{
+	updated_ = true;
+}
+
+bool playground::is_updated() noexcept
+{
+	if( updated_ == true )
+	{
+		updated_ = false;
+
+		return true;
+	}
+
+	return updated_;
+}

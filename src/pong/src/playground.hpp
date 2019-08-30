@@ -17,6 +17,11 @@ public:
 	paddle get_paddle() const noexcept;
 	position get_center() const noexcept;
 	ball get_ball() const noexcept;
+	void update( double delta ) noexcept;
+	bool is_updated() noexcept;
+
+private :
+	bool updated_ = false;
 };
 
 #endif // !_PLAYGROUND_HPP_
