@@ -10,7 +10,7 @@ target_include_directories(pong_unit_tests
     ../../../thirdparties/catch2)
 
 target_link_libraries(pong_unit_tests
-  pong)
+  pong_domain)
 
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
@@ -20,6 +20,6 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
     POST_BUILD
     COMMAND
 	  ${CMAKE_COMMAND} -E copy_if_different
-      $<TARGET_FILE:pong>
+      $<TARGET_FILE:pong_domain>
       $<TARGET_FILE_DIR:pong_unit_tests>)
 endif()

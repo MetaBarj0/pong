@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
-add_library(pong
+add_library(pong_domain
   SHARED
   src/game.cpp
   src/playground.cpp
@@ -11,24 +11,24 @@ add_library(pong
   src/ball.cpp)
 
 
-set_target_properties(pong
+set_target_properties(pong_domain
   PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 	CXX_VISIBILITY_PRESET HIDDEN
 	POSITION_INDEPENDENT_CODE 1
 	SOVERSION ${PROJECT_VERSION_MAJOR}
-	OUTPUT_NAME "libpong"
+	OUTPUT_NAME "pong_domain"
 	DEBUG_POSTFIX "_d"
 )
 
 include(GenerateExportHeader)
-generate_export_header(pong)
+generate_export_header(pong_domain)
 
-target_include_directories(pong
+target_include_directories(pong_domain
   PUBLIC
     src
-    $<TARGET_FILE_DIR:pong>)
+    $<TARGET_FILE_DIR:pong_domain>)
 
 enable_testing()
 
@@ -46,7 +46,7 @@ add_subdirectory(specs)
 add_subdirectory(tests)
 
 install(TARGETS
-  pong
+  pong_domain
   ARCHIVE
     DESTINATION ${INSTALL_LIBDIR}
     COMPONENT lib

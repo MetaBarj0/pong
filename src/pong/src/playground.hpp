@@ -1,14 +1,14 @@
 #ifndef _PLAYGROUND_HPP_
 #define _PLAYGROUND_HPP_
 
-#include "pong_export.h"
+#include "pong_domain_export.h"
 
 #include "wall.hpp"
 #include "paddle.hpp"
 #include "position.hpp"
 #include "ball.hpp"
 
-class PONG_EXPORT playground
+class PONG_DOMAIN_EXPORT playground
 {
 public:
 	unsigned short width() const noexcept;

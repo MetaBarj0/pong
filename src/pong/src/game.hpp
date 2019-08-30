@@ -1,11 +1,11 @@
 #ifndef _GAME_HPP_
 #define _GAME_HPP_
 
-#include "pong_export.h"
+#include "pong_domain_export.h"
 
 #include "playground.hpp"
 
-class PONG_EXPORT game
+class PONG_DOMAIN_EXPORT game
 {
 public:
 	void start() noexcept;

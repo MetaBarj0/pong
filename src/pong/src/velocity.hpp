@@ -1,7 +1,7 @@
 #ifndef _VELOCITY_HPP_
 #define _VELOCITY_HPP_
 
-#include "pong_export.h"
+#include "pong_domain_export.h"
 
 enum class directions
 {
@@ -16,7 +16,7 @@ enum class directions
 	none
 };
 
-class PONG_EXPORT velocity
+class PONG_DOMAIN_EXPORT velocity
 {
 public:
 	velocity( unsigned char speed_value, directions direction_value ) noexcept;

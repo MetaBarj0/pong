@@ -1,7 +1,7 @@
 #ifndef _PADDLE_HPP_
 #define _PADDLE_HPP_
 
-#include "pong_export.h"
+#include "pong_domain_export.h"
 #include "position.hpp"
 #include "velocity.hpp"
 
@@ -15,7 +15,7 @@ enum class paddle_orientation
 	vertical
 };
 
-class PONG_EXPORT paddle
+class PONG_DOMAIN_EXPORT paddle
 {
 public:
 	paddle() noexcept;

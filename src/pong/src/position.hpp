@@ -1,9 +1,9 @@
 #ifndef _POSITION_HPP_
 #define _POSITION_HPP_
 
-#include "pong_export.h"
+#include "pong_domain_export.h"
 
-class PONG_EXPORT position
+class PONG_DOMAIN_EXPORT position
 {
 public:
 	unsigned short x() const noexcept;

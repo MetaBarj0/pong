@@ -1,7 +1,7 @@
 #ifndef _WALL_HPP_
 #define _WALL_HPP_
 
-#include "pong_export.h"
+#include "pong_domain_export.h"
 
 enum class wall_position
 {
@@ -10,7 +10,7 @@ enum class wall_position
 	bottom
 };
 
-class PONG_EXPORT wall
+class PONG_DOMAIN_EXPORT wall
 {
 public :
 	explicit wall( wall_position position ) noexcept;
