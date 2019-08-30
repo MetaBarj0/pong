@@ -67,4 +67,37 @@ SCENARIO( "The paddle has a velocity" )
 	}
 }
 
+SCENARIO( "The paddle is controllable" )
+{
+	GIVEN( "A paddle in a playground in a started game" )
+	{
+		game the_game;
+		auto &paddle = the_game.get_playground().get_paddle();
+
+		THEN( "The paddle can move to top" )
+		{
+			paddle.move_to_top();
+
+			REQUIRE( paddle.get_velocity().get_direction() == directions::top );
+			REQUIRE( paddle.get_velocity().get_speed() == 175 );
+		}
+
+		AND_THEN( "The paddle can move to bottom" )
+		{
+			paddle.move_to_bottom();
+
+			REQUIRE( paddle.get_velocity().get_direction() == directions::bottom );
+			REQUIRE( paddle.get_velocity().get_speed() == 175 );
+		}
+
+		AND_THEN( "The paddle can stop movement" )
+		{
+			paddle.stop_moving();
+
+			REQUIRE( paddle.get_velocity().get_direction() == directions::none );
+			REQUIRE( paddle.get_velocity().get_speed() == 0 );
+		}
+	}
+}
+
 #endif // !_PADDLE_SCENARIO_HPP__

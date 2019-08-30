@@ -11,6 +11,8 @@ enum class directions
 	bottom_right,
 	top_left,
 	bottom_left,
+	top,
+	bottom,
 	none
 };
 

@@ -1,5 +1,9 @@
 #include "paddle.hpp"
 
+paddle::paddle() noexcept : velocity_{ 0,directions::none }
+{
+}
+
 paddle_location paddle::get_location() const noexcept
 {
 	return paddle_location::left;
@@ -25,7 +29,25 @@ position paddle::get_center() const noexcept
 	return {};
 }
 
-velocity paddle::get_velocity() const noexcept
+const velocity &paddle::get_velocity() const noexcept
 {
-	return { 0, directions::none };
+	return velocity_;
+}
+
+void paddle::move_to_top() noexcept
+{
+	velocity_.set_direction( directions::top );
+	velocity_.set_speed( 175 );
+}
+
+void paddle::move_to_bottom() noexcept
+{
+	velocity_.set_direction( directions::bottom );
+	velocity_.set_speed( 175 );
+}
+
+void paddle::stop_moving() noexcept
+{
+	velocity_.set_direction( directions::none );
+	velocity_.set_speed( 0 );
 }

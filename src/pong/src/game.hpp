@@ -15,7 +15,7 @@ public:
 
 private:
 	bool running = false;
-	const playground playground;
+	const playground playground = {};
 };
 
 #endif // !_GAME_HPP_
