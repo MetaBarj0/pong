@@ -29,9 +29,12 @@ public:
 	void move_to_top() noexcept;
 	void move_to_bottom() noexcept;
 	void stop_moving() noexcept;
+	void update( double delta ) noexcept;
+	bool is_updated() noexcept;
 
 private:
 	velocity velocity_;
+	bool updated_ = false;
 };
 
 #endif // !_PADDLE_HPP_

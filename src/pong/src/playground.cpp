@@ -15,9 +15,9 @@ wall playground::get_wall_by_position( wall_position position ) const noexcept
 	return wall{ position };
 }
 
-paddle playground::get_paddle() const noexcept
+paddle &playground::get_paddle() noexcept
 {
-	return {};
+	return paddle_;
 }
 
 position playground::get_center() const noexcept
@@ -25,13 +25,16 @@ position playground::get_center() const noexcept
 	return {};
 }
 
-ball playground::get_ball() const noexcept
+ball &playground::get_ball() noexcept
 {
-	return {};
+	return ball_;
 }
 
 void playground::update( double delta ) noexcept
 {
+	paddle_.update( delta );
+	ball_.update( delta );
+
 	updated_ = true;
 }
 

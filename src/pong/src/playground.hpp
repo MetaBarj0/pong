@@ -14,14 +14,16 @@ public:
 	unsigned short width() const noexcept;
 	unsigned short height() const noexcept;
 	wall get_wall_by_position( wall_position position ) const noexcept;
-	paddle get_paddle() const noexcept;
+	paddle &get_paddle() noexcept;
 	position get_center() const noexcept;
-	ball get_ball() const noexcept;
+	ball &get_ball() noexcept;
 	void update( double delta ) noexcept;
 	bool is_updated() noexcept;
 
-private :
+private:
 	bool updated_ = false;
+	paddle paddle_;
+	ball ball_;
 };
 
 #endif // !_PLAYGROUND_HPP_

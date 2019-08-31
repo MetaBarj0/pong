@@ -14,11 +14,11 @@ SCENARIO( "A paddle is in the playground when the game is started" )
 
 		AND_GIVEN( "existing playground" )
 		{
-			const auto &playground = the_game.get_playground();
+			auto &playground = the_game.get_playground();
 
 			THEN( "A paddle exists in the playground" )
 			{
-				const auto &paddle = playground.get_paddle();
+				auto &paddle = playground.get_paddle();
 
 				GIVEN( "An existing paddle in the playground" )
 				{
@@ -55,7 +55,7 @@ SCENARIO( "The paddle has a velocity" )
 	{
 		game the_game;
 		the_game.start();
-		const auto &playground = the_game.get_playground();
+		auto &playground = the_game.get_playground();
 
 		THEN( "The paddle in the playground is standing still" )
 		{

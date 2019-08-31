@@ -14,11 +14,11 @@ SCENARIO( "A ball is in the playground when the game is started" )
 
 		AND_GIVEN( "There is a playground" )
 		{
-			const auto &playground = the_game.get_playground();
+			auto &playground = the_game.get_playground();
 
 			THEN( "There is one ball in the playground" )
 			{
-				const auto &ball = playground.get_ball();
+				auto &ball = playground.get_ball();
 
 				AND_THEN( "The ball is at the center of the playground" )
 				{
