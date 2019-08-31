@@ -30,22 +30,10 @@ ball &playground::get_ball() noexcept
 	return ball_;
 }
 
-void playground::update( double delta ) noexcept
+bool playground::update_details( double delta ) noexcept
 {
 	paddle_.update( delta );
 	ball_.update( delta );
 
-	updated_ = true;
-}
-
-bool playground::is_updated() noexcept
-{
-	if( updated_ == true )
-	{
-		updated_ = false;
-
-		return true;
-	}
-
-	return updated_;
+	return true;
 }

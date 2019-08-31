@@ -4,20 +4,21 @@
 #include "pong_domain_export.h"
 
 #include "playground.hpp"
+#include "updatable.hpp"
 
-class PONG_DOMAIN_EXPORT game
+class PONG_DOMAIN_EXPORT game : public updatable
 {
 public:
 	void start() noexcept;
 	bool is_running() const noexcept;
 	void stop() noexcept;
 	playground &get_playground() noexcept;
-	void update( double delta ) noexcept;
-	bool is_updated() noexcept;
+
+private:
+	bool update_details( double delta ) noexcept;
 
 private:
 	bool running_ = false;
-	bool updated_ = false;
 	playground playground_;
 };
 

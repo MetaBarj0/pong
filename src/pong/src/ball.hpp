@@ -4,18 +4,17 @@
 #include "pong_domain_export.h"
 #include "position.hpp"
 #include "velocity.hpp"
+#include "updatable.hpp"
 
-class PONG_DOMAIN_EXPORT ball
+class PONG_DOMAIN_EXPORT ball : public updatable
 {
 public:
 	position get_center() const noexcept;
 	unsigned char size() const noexcept;
 	velocity get_velocity() const noexcept;
-	bool is_updated() noexcept;
-	void update( double delta ) noexcept;
 
-private:
-	bool updated_ = false;
+private :
+	bool update_details( double delta ) noexcept;
 };
 
 #endif // !_BALL_HPP_

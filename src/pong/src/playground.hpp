@@ -7,8 +7,9 @@
 #include "paddle.hpp"
 #include "position.hpp"
 #include "ball.hpp"
+#include "updatable.hpp"
 
-class PONG_DOMAIN_EXPORT playground
+class PONG_DOMAIN_EXPORT playground : public updatable
 {
 public:
 	unsigned short width() const noexcept;
@@ -17,11 +18,11 @@ public:
 	paddle &get_paddle() noexcept;
 	position get_center() const noexcept;
 	ball &get_ball() noexcept;
-	void update( double delta ) noexcept;
-	bool is_updated() noexcept;
+
+private :
+	bool update_details( double delta ) noexcept;
 
 private:
-	bool updated_ = false;
 	paddle paddle_;
 	ball ball_;
 };

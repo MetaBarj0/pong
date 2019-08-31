@@ -8,7 +8,8 @@ add_library(pong_domain
   src/paddle.cpp
   src/position.cpp
   src/velocity.cpp
-  src/ball.cpp)
+  src/ball.cpp
+  src/updatable.cpp)
 
 
 set_target_properties(pong_domain
