@@ -52,7 +52,7 @@ void paddle::stop_moving() noexcept
 	velocity_.set_speed( 0 );
 }
 
-bool paddle::update_details( double delta ) noexcept
+update_statuses paddle::do_update( double delta ) noexcept
 {
-	return true;
+	return update_statuses::updated;
 }

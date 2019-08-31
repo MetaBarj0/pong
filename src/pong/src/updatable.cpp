@@ -2,17 +2,17 @@
 
 void updatable::update( double delta ) noexcept
 {
-	updated_ = update_details( delta );
+	status_ = do_update( delta );
 }
 
 bool updatable::is_updated() noexcept
 {
-	if( updated_ == true )
+	if( status_ == update_statuses::updated )
 	{
-		updated_ = false;
+		status_= update_statuses::not_updated;
 
 		return true;
 	}
 
-	return updated_;
+	return false;
 }

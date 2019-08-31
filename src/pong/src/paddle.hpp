@@ -32,7 +32,7 @@ public:
 	void stop_moving() noexcept;
 
 private :
-	bool update_details( double delta ) noexcept;
+	update_statuses do_update( double delta ) noexcept;
 
 private:
 	velocity velocity_;

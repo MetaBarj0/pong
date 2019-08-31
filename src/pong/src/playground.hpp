@@ -20,7 +20,7 @@ public:
 	ball &get_ball() noexcept;
 
 private :
-	bool update_details( double delta ) noexcept;
+	update_statuses do_update( double delta ) noexcept;
 
 private:
 	paddle paddle_;

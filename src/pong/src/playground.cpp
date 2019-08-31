@@ -30,10 +30,10 @@ ball &playground::get_ball() noexcept
 	return ball_;
 }
 
-bool playground::update_details( double delta ) noexcept
+update_statuses playground::do_update( double delta ) noexcept
 {
 	paddle_.update( delta );
 	ball_.update( delta );
 
-	return true;
+	return update_statuses::updated;
 }

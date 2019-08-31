@@ -20,12 +20,12 @@ playground &game::get_playground() noexcept
 	return playground_;
 }
 
-bool game::update_details( double delta ) noexcept
+update_statuses game::do_update( double delta ) noexcept
 {
 	if( !running_ )
-		return false;
+		return update_statuses::not_updated;
 
 	playground_.update( delta );
 
-	return true;
+	return update_statuses::updated;
 }

@@ -14,7 +14,7 @@ public:
 	velocity get_velocity() const noexcept;
 
 private :
-	bool update_details( double delta ) noexcept;
+	update_statuses do_update( double delta ) noexcept;
 };
 
 #endif // !_BALL_HPP_

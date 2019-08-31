@@ -15,7 +15,7 @@ public:
 	playground &get_playground() noexcept;
 
 private:
-	bool update_details( double delta ) noexcept;
+	update_statuses do_update( double delta ) noexcept;
 
 private:
 	bool running_ = false;
