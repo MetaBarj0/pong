@@ -17,5 +17,12 @@ velocity ball::get_velocity() const noexcept
 
 update_statuses ball::do_update( double delta ) noexcept
 {
+	integrate();
+
 	return update_statuses::updated;
+}
+
+integration_statuses ball::do_integrate() noexcept
+{
+	return integration_statuses::integrated;
 }
