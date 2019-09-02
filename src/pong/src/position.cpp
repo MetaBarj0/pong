@@ -19,3 +19,13 @@ bool position::operator==( position &&pos ) const noexcept
 {
 	return ( pos.x_ == x_ ) && ( pos.y_ == y_ );
 }
+
+bool position::operator !=( const position &pos ) const noexcept
+{
+	return !( pos == *this );
+}
+
+bool position::operator !=( position &&pos ) const noexcept
+{
+	return !( pos == *this );
+}

@@ -13,10 +13,14 @@ public:
 	position get_center() const noexcept;
 	unsigned char size() const noexcept;
 	velocity get_velocity() const noexcept;
+	void set_velocity( const velocity &value ) noexcept;
 
 private:
 	update_statuses do_update( double delta ) noexcept;
-	integration_statuses do_integrate() noexcept;
+	integration_statuses do_integrate( double delta ) noexcept;
+
+private :
+	velocity velocity_ = { 125, directions::right };
 };
 
 #endif // !_BALL_HPP_

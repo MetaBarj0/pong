@@ -12,11 +12,11 @@ enum class integration_statuses
 class PONG_DOMAIN_EXPORT integratable
 {
 public:
-	void integrate() noexcept;
+	void integrate( double delta ) noexcept;
 	bool is_integrated() noexcept;
 
 protected:
-	virtual integration_statuses do_integrate() noexcept = 0;
+	virtual integration_statuses do_integrate( double delta ) noexcept = 0;
 
 protected:
 	integration_statuses status_ = integration_statuses::not_integrated;

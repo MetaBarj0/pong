@@ -1,8 +1,8 @@
 #include "integratable.hpp"
 
-void integratable::integrate() noexcept
+void integratable::integrate( double delta ) noexcept
 {
-	status_ = do_integrate();
+	status_ = do_integrate( delta );
 }
 
 bool integratable::is_integrated() noexcept

@@ -9,8 +9,10 @@ public:
 	unsigned short x() const noexcept;
 	unsigned short y() const noexcept;
 
-	bool operator == ( const position &pos ) const noexcept;
-	bool operator == ( position &&pos ) const noexcept;
+	bool operator ==( const position &pos ) const noexcept;
+	bool operator ==( position &&pos ) const noexcept;
+	bool operator !=( const position &pos ) const noexcept;
+	bool operator !=( position &&pos ) const noexcept;
 
 private:
 	const unsigned short x_{}, y_{};

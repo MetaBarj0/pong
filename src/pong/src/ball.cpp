@@ -12,17 +12,22 @@ unsigned char ball::size() const noexcept
 
 velocity ball::get_velocity() const noexcept
 {
-	return { 125, directions::right };
+	return velocity_;
+}
+
+void ball::set_velocity( const velocity &value ) noexcept
+{
+	velocity_ = value;
 }
 
 update_statuses ball::do_update( double delta ) noexcept
 {
-	integrate();
+	integrate( delta );
 
 	return update_statuses::updated;
 }
 
-integration_statuses ball::do_integrate() noexcept
+integration_statuses ball::do_integrate( double delta ) noexcept
 {
 	return integration_statuses::integrated;
 }

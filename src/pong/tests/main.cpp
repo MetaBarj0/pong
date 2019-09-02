@@ -6,3 +6,4 @@
 #include "game/tests.hpp"
 #include "paddle/tests.hpp"
 #include "playground/tests.hpp"
+#include "velocity_integrator/tests.hpp"
