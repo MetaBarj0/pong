@@ -21,7 +21,7 @@ TEST_CASE( "A speed of 0 induces no change in position using a velocity integrat
 		 directions::top_left,
 		 directions::top_right } )
 		[ direction, &a_playground ]() {
-		ball a_ball{ a_playground };
+		ball &a_ball = a_playground.get_ball();
 		a_ball.set_velocity( { 0,direction } );
 
 		const auto &center_before = a_ball.get_center();

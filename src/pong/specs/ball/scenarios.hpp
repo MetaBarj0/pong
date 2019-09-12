@@ -18,7 +18,7 @@ SCENARIO( "A ball is in the playground when the game is started" )
 
 			THEN( "There is one ball in the playground" )
 			{
-				auto &ball = playground.get_ball();
+				const auto &ball = playground.get_ball();
 
 				AND_THEN( "The ball is at the center of the playground" )
 				{

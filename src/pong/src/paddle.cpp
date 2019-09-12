@@ -27,7 +27,7 @@ unsigned char paddle::height() const noexcept
 
 position paddle::get_center() const noexcept
 {
-	return { 0,playground_.get_center().y() };
+	return { 0, playground_.get_center().y() };
 }
 
 const velocity &paddle::get_velocity() const noexcept
