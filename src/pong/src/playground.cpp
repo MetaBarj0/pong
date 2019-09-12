@@ -22,7 +22,7 @@ paddle &playground::get_paddle() noexcept
 
 position playground::get_center() const noexcept
 {
-	return {};
+	return { 250, 250 };
 }
 
 ball &playground::get_ball() noexcept

@@ -1,5 +1,7 @@
 #include "position.hpp"
 
+position::position( unsigned short x, unsigned short y ) noexcept : x_{ x }, y_{ y }{}
+
 unsigned short position::x() const noexcept
 {
 	return x_;

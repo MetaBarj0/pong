@@ -36,6 +36,14 @@ SCENARIO( "The playground has walls and is correctly sized" )
 				REQUIRE( playground.height() == 500 );
 			}
 
+			AND_THEN( "The center of the playground is (250, 250)" )
+			{
+				const auto &center = playground.get_center();
+
+				REQUIRE( center.x() == 250 );
+				REQUIRE( center.y() == 250 );
+			}
+
 			AND_WHEN( "Looking in all existing positions" )
 			{
 				const auto positions =

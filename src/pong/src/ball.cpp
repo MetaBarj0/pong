@@ -1,8 +1,11 @@
 #include "ball.hpp"
+#include "playground.hpp"
+
+ball::ball( const playground &playground ) noexcept : velocity_{ 125, directions::right }, playground_{ playground } {}
 
 position ball::get_center() const noexcept
 {
-	return {};
+	return playground_.get_center();
 }
 
 unsigned char ball::size() const noexcept

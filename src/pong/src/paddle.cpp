@@ -1,6 +1,7 @@
 #include "paddle.hpp"
+#include "playground.hpp"
 
-paddle::paddle() noexcept : velocity_{ 0,directions::none }
+paddle::paddle( const playground &playground ) noexcept : velocity_{ 0,directions::none }, playground_{ playground }
 {
 }
 
@@ -26,7 +27,7 @@ unsigned char paddle::height() const noexcept
 
 position paddle::get_center() const noexcept
 {
-	return {};
+	return { 0,playground_.get_center().y() };
 }
 
 const velocity &paddle::get_velocity() const noexcept

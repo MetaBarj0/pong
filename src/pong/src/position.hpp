@@ -6,6 +6,9 @@
 class PONG_DOMAIN_EXPORT position
 {
 public:
+	position() noexcept = default;
+	position( unsigned short x, unsigned short y ) noexcept;
+
 	unsigned short x() const noexcept;
 	unsigned short y() const noexcept;
 

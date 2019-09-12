@@ -6,6 +6,8 @@
 #include "velocity.hpp"
 #include "updatable.hpp"
 
+class playground;
+
 enum class paddle_location
 {
 	left
@@ -19,7 +21,7 @@ enum class paddle_orientation
 class PONG_DOMAIN_EXPORT paddle : public updatable
 {
 public:
-	paddle() noexcept;
+	explicit paddle(const playground &playground) noexcept;
 
 	paddle_location get_location() const noexcept;
 	paddle_orientation get_orientation() const noexcept;
@@ -36,6 +38,7 @@ private :
 
 private:
 	velocity velocity_;
+	const playground &playground_;
 };
 
 #endif // !_PADDLE_HPP_

@@ -19,12 +19,12 @@ public:
 	position get_center() const noexcept;
 	ball &get_ball() noexcept;
 
-private :
+private:
 	update_statuses do_update( double delta ) noexcept;
 
 private:
-	paddle paddle_;
-	ball ball_;
+	paddle paddle_{ *this };
+	ball ball_{ *this };
 };
 
 #endif // !_PLAYGROUND_HPP_

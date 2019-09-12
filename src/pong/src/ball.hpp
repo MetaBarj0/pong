@@ -7,9 +7,13 @@
 #include "updatable.hpp"
 #include "integratable.hpp"
 
+class playground;
+
 class PONG_DOMAIN_EXPORT ball : public updatable, public integratable
 {
 public:
+	ball( const playground &playground ) noexcept;
+
 	position get_center() const noexcept;
 	unsigned char size() const noexcept;
 	velocity get_velocity() const noexcept;
@@ -20,7 +24,8 @@ private:
 	integration_statuses do_integrate( double delta ) noexcept;
 
 private :
-	velocity velocity_ = { 125, directions::right };
+	velocity velocity_;
+	const playground &playground_;
 };
 
 #endif // !_BALL_HPP_
