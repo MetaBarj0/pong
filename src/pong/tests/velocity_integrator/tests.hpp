@@ -43,6 +43,8 @@ TEST_CASE( "Moving in all supported directions at specified speed change positio
 
 		const auto center_before = a_ball.get_center();
 
+		auto skew_delta_pos = static_cast< unsigned short >( double{ a_ball.get_velocity().get_speed() / std::sqrt( 2 ) } );
+
 		SECTION( "Moving to the right at 125 u/s increases the x coordinate by 125" )
 		{
 			a_ball.set_velocity( { 125, directions::right } );
@@ -69,10 +71,8 @@ TEST_CASE( "Moving in all supported directions at specified speed change positio
 
 			a_ball.integrate( 1 );
 
-			auto delta_pos = static_cast< unsigned short >( double{ a_ball.get_velocity().get_speed() / std::sqrt( 2 ) } );
-
-			REQUIRE( center_before.x() - delta_pos == a_ball.get_center().x() );
-			REQUIRE( center_before.y() - delta_pos == a_ball.get_center().y() );
+			REQUIRE( center_before.x() - skew_delta_pos == a_ball.get_center().x() );
+			REQUIRE( center_before.y() - skew_delta_pos == a_ball.get_center().y() );
 		}
 
 		SECTION( "Moving to the top-right at 125 u/s increases the x and decreases y coordinate by 125 / sqrt( 2 )" )
@@ -81,10 +81,8 @@ TEST_CASE( "Moving in all supported directions at specified speed change positio
 
 			a_ball.integrate( 1 );
 
-			auto delta_pos = static_cast< unsigned short >( double{ a_ball.get_velocity().get_speed() / std::sqrt( 2 ) } );
-
-			REQUIRE( center_before.x() + delta_pos == a_ball.get_center().x() );
-			REQUIRE( center_before.y() - delta_pos == a_ball.get_center().y() );
+			REQUIRE( center_before.x() + skew_delta_pos == a_ball.get_center().x() );
+			REQUIRE( center_before.y() - skew_delta_pos == a_ball.get_center().y() );
 		}
 
 		SECTION( "Moving to the bottom-right at 125 u/s increases the x and y coordinate by 125 / sqrt( 2 )" )
@@ -93,10 +91,8 @@ TEST_CASE( "Moving in all supported directions at specified speed change positio
 
 			a_ball.integrate( 1 );
 
-			auto delta_pos = static_cast< unsigned short >( double{ a_ball.get_velocity().get_speed() / std::sqrt( 2 ) } );
-
-			REQUIRE( center_before.x() + delta_pos == a_ball.get_center().x() );
-			REQUIRE( center_before.y() + delta_pos == a_ball.get_center().y() );
+			REQUIRE( center_before.x() + skew_delta_pos == a_ball.get_center().x() );
+			REQUIRE( center_before.y() + skew_delta_pos == a_ball.get_center().y() );
 		}
 
 		SECTION( "Moving to the bottom-left at 125 u/s decreases the x and increases y coordinate by 125 / sqrt( 2 )" )
@@ -105,10 +101,8 @@ TEST_CASE( "Moving in all supported directions at specified speed change positio
 
 			a_ball.integrate( 1 );
 
-			auto delta_pos = static_cast< unsigned short >( double{ a_ball.get_velocity().get_speed() / std::sqrt( 2 ) } );
-
-			REQUIRE( center_before.x() - delta_pos == a_ball.get_center().x() );
-			REQUIRE( center_before.y() + delta_pos == a_ball.get_center().y() );
+			REQUIRE( center_before.x() - skew_delta_pos == a_ball.get_center().x() );
+			REQUIRE( center_before.y() + skew_delta_pos == a_ball.get_center().y() );
 		}
 	}
 }
