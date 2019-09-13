@@ -14,7 +14,7 @@ class PONG_DOMAIN_EXPORT ball : public updatable, public integratable
 public:
 	ball( const playground &playground ) noexcept;
 
-	position get_center() const noexcept;
+	const position &get_center() const noexcept;
 	unsigned char size() const noexcept;
 	velocity get_velocity() const noexcept;
 	void set_velocity( const velocity &value ) noexcept;
@@ -23,8 +23,9 @@ private:
 	update_statuses do_update( double delta ) noexcept;
 	integration_statuses do_integrate( double delta ) noexcept;
 
-private :
+private:
 	velocity velocity_;
+	position position_;
 	const playground &playground_;
 };
 

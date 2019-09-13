@@ -11,6 +11,8 @@ public:
 
 	unsigned short x() const noexcept;
 	unsigned short y() const noexcept;
+	void x( unsigned short value ) noexcept;
+	void y( unsigned short value ) noexcept;
 
 	bool operator ==( const position &pos ) const noexcept;
 	bool operator ==( position &&pos ) const noexcept;
@@ -18,7 +20,7 @@ public:
 	bool operator !=( position &&pos ) const noexcept;
 
 private:
-	const unsigned short x_{}, y_{};
+	unsigned short x_, y_;
 };
 
 #endif // !_POSITION_HPP_
